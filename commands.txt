@@ -1,0 +1,13 @@
+c1 = Cart.find 2
+c2 = Cart.find 3
+c1.products << Product.first
+c2.products << Product.first
+
+# Selecting all products from the first cart.
+c1.products
+
+# Selecting all products from the cart of the last user.
+User.last.cart.products
+
+# Gathering total price sum of the products from the first cart.
+c1.products.sum("price")
