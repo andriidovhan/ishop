@@ -11,13 +11,18 @@ class User < ApplicationRecord
 
   after_create :create_account_for_user
 
+  # def create_account_for_user
+  #   start_balance = 250
+  #   bonus_balance = 100
+  #   if age >= 18
+  #     create_account(balance: start_balance + bonus_balance)
+  #   else
+  #     create_account(balance: start_balance )
+  #   end
+  # end
+
   def create_account_for_user
-    start_balance = 250
-    bonus_balance = 100
-    if age >= 18
-      create_account(balance: start_balance + bonus_balance)
-    else
-      create_account(balance: start_balance )
-    end
+    balance = age >= 18 ? 350 : 250
+    create_account(balance: balance)
   end
 end
