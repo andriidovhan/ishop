@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # get 'products/index'
 
   root :to => redirect('/products')
-  resources :products, only: [:index, :new, :create, :show]
+  resources :products, only: [:index, :new, :create, :show, :destroy]
   # only=>index
   # {only: :index}
   resources :users

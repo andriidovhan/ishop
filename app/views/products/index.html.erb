@@ -1,5 +1,7 @@
+<p id="notice"><%= notice %></p>
+
 <h1>Products</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<!--<p>Find me in app/views/products/index.html.erb</p>-->
 
 <!--<%= @products.inspect %>-->
 
@@ -19,6 +21,8 @@
       <td><%= product.name %></td>
       <th><%= product.price %></a></th>
       <th><%= product.description %></a></th>
+      <td><%= link_to 'Show', product %></td>
+      <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
 <% end %>
 </table>
