@@ -11,6 +11,7 @@ class CartsController < ApplicationController
   end
 
   def delete
-
+    @cart = Cart.find(session[:cart_id])
+    @product = @cart.products.find(params[:product_id]).destroy
   end
 end
