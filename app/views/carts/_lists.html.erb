@@ -1,0 +1,22 @@
+<h1>Products in cart</h1>
+<p>Find me in app/views/carts/show.html.erb</p>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Link to product</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Description</th>
+  </tr>
+
+  <% @cart.products.each do |product| %>
+      <tr>
+        <td><%= product.id %></a></td>
+        <td><a href="/products/<%= product.id %>"><%= "/products/" + "#{product.id}" %></a></td>
+        <td><%= product.name %></td>
+        <th><%= product.price %></a></th>
+        <th><%= product.description %></a></th>
+      </tr>
+  <% end %>
+</table>
