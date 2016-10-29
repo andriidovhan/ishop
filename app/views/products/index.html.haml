@@ -38,14 +38,34 @@
 -#
 -#<!--<% end %>-->
 
+= flash[:notice]
 %h1 Products
 
-- @products.each do |product|
-  = product.id
-  = product.name
-  = product.price
-  = product.description
-  %td= link_to 'Show', product
-  %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
-  %td= link_to 'Buy it', add_cart_path(product_id: product.id), remote: true
+-#- @products.each do |product|
+-#  = product.id
+-#  = product.name
+-#  = product.price
+-#  = product.description
+-#  %td= link_to 'Show', product
+-#  %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+-#  %td= link_to 'Buy it', add_cart_path(product_id: product.id), remote: true
 
+
+
+%table{:border => 1}
+  %tbody
+    %tr
+      %td ID:
+      %td Name:
+      %td Price:
+      %td Description:
+      %td{colspan: 3} Options:
+    - @products.each do |product|
+      %tr
+        %td= product.id
+        %td= product.name
+        %td= product.price
+        %td= product.description
+        %td= link_to 'Show', product
+        %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Buy it', add_cart_path(product_id: product.id), remote: true
