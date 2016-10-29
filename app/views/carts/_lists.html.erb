@@ -10,7 +10,7 @@
     <th>Description</th>
   </tr>
 
-  <% @cart.products.each do |product| %>
+  <% @products.each do |product| %>
       <tr>
         <td><%= product.id %></a></td>
         <td><a href="/products/<%= product.id %>"><%= "/products/" + "#{product.id}" %></a></td>
