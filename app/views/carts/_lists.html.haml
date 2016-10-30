@@ -1,8 +1,11 @@
 -#= flash[:notice]
-%h1 Products in your cart
-
-%table
-  %tbody
+.panel.panel-default
+  / Default panel contents
+  .panel-heading Products in your cart
+  .panel-body
+  / Table
+  %table.table
+    %tbody
     %tr
       %td ID:
       %td Name:
@@ -16,6 +19,9 @@
         %td= product.description
         %td= link_to 'Show', product,  class: "btn btn-info"
         %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-warning"
+
+
+
 
 -#<table>
 -#  <tr>

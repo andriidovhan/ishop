@@ -42,10 +42,15 @@
 
 = render 'layouts/flash_message'
 
-%h1 Products
+-#%h1 Products
 
-%table{:border => 1}
-  %tbody
+.panel.panel-default
+  / Default panel contents
+  .panel-heading Products
+  .panel-body
+  / Table
+  %table.table
+    %tbody
     %tr
       %td ID:
       %td Name:

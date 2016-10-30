@@ -1,0 +1,5 @@
+%div
+  - flash.each do |key, value|
+    %div{:class => "alert #{flash_class(key).to_s} fade in"}
+      %a.close{"data-dismiss" => "alert", :href => "#"} ×
+      = value
