@@ -11,7 +11,9 @@ class ProductsController < ApplicationController
 
   def create
     Product.create(product_params)
-    redirect_to products_path, notice: 'Product has been successfully added.'
+    flash[:notice] = 'Product has been successfully created.'
+    redirect_to products_path
+    # , success: 'Product has been successfully added.'
   end
 
   def show
@@ -21,6 +23,7 @@ class ProductsController < ApplicationController
   def destroy
     # @product.destroy
     Product.find(params[:id]).destroy
+    # flash[:alert] = 'Product has been successfully destroyed.'
     redirect_to products_path, alert: 'Product has been successfully destroyed.'
   end
 
