@@ -52,11 +52,11 @@
   %table.table
     %tbody
     %tr
-      %td ID:
-      %td Name:
-      %td Price:
-      %td Description:
-      %td{colspan: 3} Options:
+      %th ID:
+      %th Name:
+      %th Price:
+      %th Description:
+      -#%th{colspan: 3} Options:
     - @products.each do |product|
       %tr
         %td= product.id

@@ -30,8 +30,11 @@
 -#    <%= f.submit %>
 -#  </div>
 -#<% end %>
--#as
 
+
+-#
+-#Form 1
+-#
 = form_for(product) do |f|
   - if product.errors.any?
     #error_explanation
@@ -52,3 +55,43 @@
     = f.text_field :description
   .actions
     = f.submit class: "btn btn-success"
+
+
+-#
+-#Form 2
+-#
+%form_for(product)
+  .form-group
+    %label{:for => "NameOfProduct"} Name
+    %input#NameOfProduct.form-control{:placeholder => "Name of product", :type => "text"}/
+  .form-group
+    %label{:for => "PriceOfPruduct"} Price
+    %input#PriceOfProduct.form-control{:placeholder => "Price", :type => "number"}/
+  .form-group
+    %label{:for => "DescriptionOfPruduct"} Description
+    %input#DescriptionOfProduct.form-control{:placeholder => "Description", :type => "text"}/
+  %button.btn.btn-default{:type => "submit"} Save Product
+
+
+-#
+-#Form 3
+-#
+.row-fluid
+  .span4.well
+    = form_for product, :html => {:class => "form-horizontal"} do |m|
+      %fieldset
+        %legend Member Form
+        .control-group
+          = m.label :name, :class => "control-label"
+          .controls
+            = m.text_field :name, :class => "input-xlarge"
+        .control-group
+          = m.label :price, :class => "control-label"
+          .controls
+            = m.number_field :price, :class => "input-xlarge"
+        .control-group
+          = m.label :description, :class => "control-label"
+          .controls
+            = m.text_field :description, :class => "input-xlarge"
+        .form-actions
+          = m.submit :class => "btn btn-primary"
