@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
   def destroy
     # @product.destroy
     Product.find(params[:id]).destroy
-    redirect_to products_path, notice: 'Product has been successfully destroyed.'
+    redirect_to products_path, alert: 'Product has been successfully destroyed.'
   end
 
   private

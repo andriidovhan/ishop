@@ -38,7 +38,10 @@
 -#
 -#<!--<% end %>-->
 
-= flash[:notice]
+-#= flash[:notice]
+
+= render 'layouts/flash_message'
+
 %h1 Products
 
 %table{:border => 1}
@@ -55,6 +58,8 @@
         %td= product.name
         %td= product.price
         %td= product.description
-        %td= link_to 'Show', product
-        %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
-        %td= link_to 'Buy it', add_cart_path(product_id: product.id), remote: true
+        %td= link_to 'Show', product, class: "btn btn-info"
+        %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning"
+        %td= link_to 'Buy it', add_cart_path(product_id: product.id), remote: true, class: "btn btn-success"
+
+= link_to 'New Product', new_product_path,  class: "btn btn-default"

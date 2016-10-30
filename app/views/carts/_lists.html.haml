@@ -14,8 +14,8 @@
         %td= product.name
         %td= product.price
         %td= product.description
-        %td= link_to 'Show', product
-        %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Show', product,  class: "btn btn-info"
+        %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-warning"
 
 -#<table>
 -#  <tr>
