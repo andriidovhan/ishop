@@ -13,14 +13,12 @@
     %tbody
     %tr
       %td ID:
-      %td INDEX:
       %td Name:
       %td Price:
       %td Description:
-    - @products.each_with_index do |product, idx|
+    - @products.each do |product, idx|
       %tr
         %td= product.id
-        %td= idx
         %td= product.name
         %td= product.price
         %td= product.description
