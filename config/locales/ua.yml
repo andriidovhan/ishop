@@ -1,0 +1,12 @@
+ua:
+  products:
+    products: Список продуктів
+    buy: купити
+    are_you_sure: ти впевнений
+  carts:
+    add: товар було добавлено
+
+  activerecord:
+      attributes:
+        product:
+          price: Ціна

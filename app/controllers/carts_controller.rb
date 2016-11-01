@@ -8,10 +8,13 @@ class CartsController < ApplicationController
     @cart = Cart.find(session[:cart_id])
     @product = Product.find(params[:product_id])
     @cart.products << @product
+    # CartMailer.product_added(@product).deliver_now
   end
 
-  def delete
-    @cart = Cart.find(session[:cart_id])
-    @product = @cart.products.find(params[:product_id]).destroy
+  def destroy
+    cart = Cart.find(session[:cart_id])
+    product = cart.products.find(params[:id])
+    cart.products.delete product
+    redirect_to carts_show_path, alert: 'Product has been successfully removed from cart.'
   end
 end

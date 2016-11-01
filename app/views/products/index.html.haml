@@ -44,6 +44,9 @@
 
 -#%h1 Products
 
+%h1
+  = t 'products.products'
+  -#= t ':products.products'
 .panel.panel-default
   / Default panel contents
   .panel-heading Products
@@ -54,7 +57,9 @@
     %tr
       %th ID:
       %th Name:
-      %th Price:
+      -#%th Price:
+      %th
+        = Product.human_attribute_name('price')
       %th Description:
       -#%th{colspan: 3} Options:
     - @products.each do |product|
@@ -64,7 +69,9 @@
         %td= product.price
         %td= product.description
         %td= link_to 'Show', product, class: "btn btn-info"
-        %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning"
-        %td= link_to 'Buy it', add_cart_path(product_id: product.id), remote: true, class: "btn btn-success"
+        -#%td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning"
+        %td= link_to 'Destroy', product, method: :delete, data: { confirm: t('products.are_you_sure') }, class: "btn btn-warning"
+        -#%td= link_to 'Buy it', add_cart_path(product_id: product.id), remote: true, class: "btn btn-success"
+        %td= link_to t('products.buy'), add_cart_path(product_id: product.id), remote: true, class: "btn btn-success"
 
 = link_to 'New Product', new_product_path,  class: "btn btn-default"

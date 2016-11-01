@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resource :cart, only: [:show] do
     get :add, on: :member
+    delete :destroy
+    # , path: 'destroy/:id'
   end
   # only=>index
   # {only: :index}

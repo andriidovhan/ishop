@@ -1,3 +1,8 @@
+%h1
+  =t('carts.show.header', count: (@products.count))
+
+= render 'layouts/flash_message'
+
 -#= flash[:notice]
 .panel.panel-default
   / Default panel contents
@@ -8,38 +13,16 @@
     %tbody
     %tr
       %td ID:
+      %td INDEX:
       %td Name:
       %td Price:
       %td Description:
-    - @products.each do |product|
+    - @products.each_with_index do |product, idx|
       %tr
         %td= product.id
+        %td= idx
         %td= product.name
         %td= product.price
         %td= product.description
         %td= link_to 'Show', product,  class: "btn btn-info"
-        %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' },  class: "btn btn-warning"
-
-
-
-
--#<table>
--#  <tr>
--#    <th>ID</th>
--#    <th>Link to product</th>
--#    <th>Name</th>
--#    <th>Price</th>
--#    <th>Description</th>
--#  </tr>
--#
--#  <% @products.each do |product| %>
--#    <tr>
--#      <td><%= product.id %></a></td>
--#      <td><a href="/products/<%= product.id %>"><%= "/products/" + "#{product.id}" %></a></td>
--#      <td><%= product.name %></td>
--#      <th><%= product.price %></a></th>
--#      <th><%= product.description %></a></th>
--#      <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
--#    </tr>
--#  <% end %>
--#</table>
+        %td= link_to 'Destroy', cart_path(id: product.id), method: :delete, class: "btn btn-warning"

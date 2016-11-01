@@ -19,5 +19,24 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
+#en:
+#  hello: "Hello world"
+
 en:
-  hello: "Hello world"
+  products:
+    products: Products List test en.yml
+    buy: blablba
+    are_you_sure: are you sure? en.yml
+  carts:
+    add: asdasdadas
+    show:
+     header:
+      zero: no product in cart
+      one: product in cart
+      other: products in cart en.yml
+
+  activerecord:
+    attributes:
+      product:
+        price: Price++++
+
