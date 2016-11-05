@@ -1,10 +1,16 @@
 ua:
   products:
     products: Список продуктів
-    show: Показати
+    overview: Показати
     destroy: Видалити
     buy: Купити
+    new: Добавти товар
     are_you_sure: Ти впевнений?
+    show:
+     name: Назва
+     description: Опис
+     price: Ціна
+     back: Назад
   carts:
     add: товар було добавлено
     show:
@@ -14,14 +20,50 @@ ua:
       zero: Жодного товару немає у корзині
       one: Товар в корзині
       other: Товари в корзині
+  users:
+    users: Список юзерів
+    overview: Переглянути
+    edit: Редагувати
+    destroy: Видалити
+    new: Створити юзера
+    show:
+     name: Ім'я
+     age: Вік
+     edit: Редагувати
+     back: Назад
 
   activerecord:
-      attributes:
-        product:
-          id: ІД
-          name: Назва
-          price: Ціна
-          description: Опис
+        models:
+          user: "Юзер"
+        attributes:
+          user:
+            name: "Ім'я"
+            age: "Вік"
+          product:
+            id: ІД
+            name: Назва
+            price: Ціна
+            description: Опис
+        errors:
+          template:
+            header:
+              one: "1 помилка присутня в %{model}"
+              other: "%{count} помилок у %{model}"
+            body: "У Вас виникли наступні помилки:"
+          models:
+            user:
+              attributes:
+                name:
+                  blank: "не може бути порожнім"
+                  too_short: "повинно бути не менше %{count} символів"
+                  invalid: "повинно містити тільки літери"
+                age:
+                  blank: "неможе бути пустим"
+                  not_a_number: "має бути тільки числовим"
+                  greater_than_or_equal_to: "має бути більше %{count}"
+                  less_than_or_equal_to: "має бути менше %{count}"
+
+
 
 
 

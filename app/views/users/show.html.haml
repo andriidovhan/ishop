@@ -16,11 +16,13 @@
 = flash[:notice]
 
 %p
-  %strong Name:
+  %strong
+    = t('users.show.name')
   = @user.name
 %p
-  %strong Age:
+  %strong
+    = t('users.show.age')
   = @user.age
-= link_to 'Edit', edit_user_path(@user)
+= link_to t('users.show.edit'), edit_user_path(@user), class: "btn btn-default"
 
-= link_to 'Back', users_path
+= link_to t('users.show.back'), users_path, class: "btn btn-default"

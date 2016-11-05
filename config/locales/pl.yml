@@ -1,0 +1,69 @@
+pl:
+  products:
+    products: Produkty
+    overview: Pokaż
+    destroy: Usuń
+    buy: Sprzedam
+    new: Dobavty produkt
+    are_you_sure: Na pewno?
+    show:
+     name: Nazwa
+     description: Opis
+     price: Cena
+     back: Powrót
+  carts:
+    add: Ten produkt został dodany
+    show:
+     show: Pokaż
+     destroy: Usuń
+     header:
+      zero: Nie ma produktów w koszyku
+      one: Produkt w koszyku
+      other: Towary w koszu
+  users:
+    users: Lista Użytkownik
+    overview: Przegląd
+    edit: Edit
+    destroy: Usuń
+    new: Nowy użytkownik
+    show:
+     name: Nazwa
+     age: Wiek
+     edit: Edit
+     back: Powrót
+
+  activerecord:
+        models:
+          user: "Użytkownik"
+        attributes:
+          user:
+            name: "Nazwa"
+            age: "Wiek"
+          product:
+            id: Identyfikator
+            name: Nazwa
+            price: Cena
+            description: Opis
+        errors:
+          template:
+            header:
+              one: "1 błąd występuje w %{model}"
+              other: "%{count} Błędy w %{model}"
+            body: "napotkasz następujący błąd:"
+          models:
+            user:
+              attributes:
+                name:
+                  blank: "nie może być pusta"
+                  too_short: "musi mieć co najmniej %{count} znaków"
+                  invalid: "może zawierać tylko litery"
+                age:
+                  blank: "nie może być pusta"
+                  not_a_number: "powinno być tylko numeryczne"
+                  greater_than_or_equal_to: "musi być większa niż %{count}"
+                  less_than_or_equal_to: "musi być mniejsza niż %{count}"
+
+
+
+
+

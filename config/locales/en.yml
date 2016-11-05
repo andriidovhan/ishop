@@ -25,10 +25,16 @@
 en:
   products:
     products: Products List test en.yml
-    show: Show
+    overview: Show
     destroy: Destroy
     buy: Buy
+    new: Add product
     are_you_sure: are you sure? en.yml
+    show:
+     name: Name
+     description: Description
+     price: Price
+     back: Back
   carts:
     add: asdasdadas
     show:
@@ -38,6 +44,17 @@ en:
       zero: no product in cart
       one: product in cart
       other: products in cart en.yml
+  users:
+    users: List of users
+    overview: Show
+    edit: Edit
+    destroy: Destroy
+    new: Add new user
+    show:
+     name: Name
+     age: Age
+     edit: Edit
+     back: Back
 
   activerecord:
     attributes:
@@ -46,3 +63,8 @@ en:
         name: Name
         price: Price
         description: Description
+      user:
+        name: Name++
+        age: Age++
+        errors:
+          template:

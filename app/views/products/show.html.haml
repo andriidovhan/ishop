@@ -21,14 +21,17 @@
 
 = flash[:notice]
 %p
-  %strong Name:
+  %strong
+    =t('products.show.name') + '=>'
   = @product.name
 %p
-  %strong Description:
+  %strong
+    =t('products.show.description') + '=>'
   = @product.description
 %p
-  %strong Price:
+  %strong
+    =t('products.show.price') + '=>'
   = @product.price
 
 
-= link_to 'Back', products_path
+= link_to t('products.show.back'), products_path, class: "btn btn-default"

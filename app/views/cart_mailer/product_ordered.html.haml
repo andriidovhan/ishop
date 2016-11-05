@@ -1,11 +1,7 @@
 %h1
-  =t('carts.show.header', count: (@products.count))
+  = "The new product '#{@product.name}' has just been added to cart"
 
-= render 'layouts/flash_message'
 
-= link_to 'Order', cart_path(id: product.id),  class: "btn btn-info"
-
--#= flash[:notice]
 .panel.panel-default
   / Default panel contents
   .panel-heading Products in your cart

@@ -49,8 +49,8 @@
   -#= t ':products.products'
 .panel.panel-default
   / Default panel contents
-  .panel-heading Products
-  .panel-body
+  -#.panel-heading Products
+  -#.panel-body
   / Table
   %table.table
     %tbody
@@ -71,10 +71,10 @@
         %td= product.name
         %td= product.price
         %td= product.description
-        %td= link_to t('products.show'), product, class: "btn btn-info"
+        %td= link_to t('products.overview'), product, class: "btn btn-info"
         -#%td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-warning"
         %td= link_to t('products.destroy'), product, method: :delete, data: { confirm: t('products.are_you_sure') }, class: "btn btn-warning"
         -#%td= link_to 'Buy it', add_cart_path(product_id: product.id), remote: true, class: "btn btn-success"
         %td= link_to t('products.buy'), add_cart_path(product_id: product.id), remote: true, class: "btn btn-success"
 
-= link_to 'New Product', new_product_path,  class: "btn btn-default"
+= link_to t('products.new'), new_product_path,  class: "btn btn-default"

@@ -17,4 +17,10 @@ class CartsController < ApplicationController
     cart.products.delete product
     redirect_to carts_show_path, alert: 'Product has been successfully removed from cart.'
   end
+
+  def order
+
+    # CartMailer.product_added(@product).deliver_now
+  end
+
 end
