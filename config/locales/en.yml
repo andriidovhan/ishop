@@ -57,14 +57,32 @@ en:
      back: Back
 
   activerecord:
-    attributes:
-      product:
-        id: ID
-        name: Name
-        price: Price
-        description: Description
-      user:
-        name: Name++
-        age: Age++
-        errors:
-          template:
+          models:
+            user: "User"
+          attributes:
+            user:
+              name: "Name"
+              age: "Age"
+            product:
+              id: ID
+              name: Name
+              price: Price
+              description: Description
+          errors:
+            template:
+              header:
+                one: "1 error is presented in  %{model}"
+                other: "%{count} error(s) in %{model}"
+              body: "You have the following error(s):"
+            models:
+              user:
+                attributes:
+                  name:
+                    blank: "can not be blank"
+                    too_short: "should be less than %{count} characters"
+                    invalid: "should be characters only"
+                  age:
+                    blank: "can not be blank"
+                    not_a_number: "should be number only"
+                    greater_than_or_equal_to: "should be more than %{count}"
+                    less_than_or_equal_to: "should be less than %{count}"
