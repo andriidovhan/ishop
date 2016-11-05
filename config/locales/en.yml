@@ -24,7 +24,7 @@
 
 en:
   products:
-    products: Products List test en.yml
+    products: Products List
     overview: Show
     destroy: Destroy
     buy: Buy
@@ -36,7 +36,7 @@ en:
      price: Price
      back: Back
   carts:
-    add: asdasdadas
+    add: asdaasdadas
     show:
      show: Show
      destroy: Remove from cart

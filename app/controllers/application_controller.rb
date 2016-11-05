@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   #   I18n.locale = params[:locale] || I18n.default_locale
   # end
 
+  # http://stackoverflow.com/questions/25329511/rails-locale-not-persistent
   def set_locale
     I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
     session[:locale] = I18n.locale
