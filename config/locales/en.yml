@@ -25,11 +25,15 @@
 en:
   products:
     products: Products List test en.yml
-    buy: blablba
+    show: Show
+    destroy: Destroy
+    buy: Buy
     are_you_sure: are you sure? en.yml
   carts:
     add: asdasdadas
     show:
+     show: Show
+     destroy: Remove from cart
      header:
       zero: no product in cart
       one: product in cart
@@ -38,5 +42,7 @@ en:
   activerecord:
     attributes:
       product:
-        price: Price++++
-
+        id: ID
+        name: Name
+        price: Price
+        description: Description

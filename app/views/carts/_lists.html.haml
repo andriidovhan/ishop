@@ -12,15 +12,19 @@
   %table.table
     %tbody
     %tr
-      %td ID:
-      %td Name:
-      %td Price:
-      %td Description:
+      %td
+        = Product.human_attribute_name('id')
+      %td
+        = Product.human_attribute_name('name')
+      %td
+        = Product.human_attribute_name('price')
+      %td
+        = Product.human_attribute_name('description')
     - @products.each do |product, idx|
       %tr
         %td= product.id
         %td= product.name
         %td= product.price
         %td= product.description
-        %td= link_to 'Show', product,  class: "btn btn-info"
-        %td= link_to 'Destroy', cart_path(id: product.id), method: :delete, class: "btn btn-warning"
+        %td= link_to t('carts.show.show'), product,  class: "btn btn-info"
+        %td= link_to t('carts.show.destroy'), cart_path(id: product.id), method: :delete, class: "btn btn-warning"

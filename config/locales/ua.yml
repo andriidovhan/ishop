@@ -1,12 +1,27 @@
 ua:
   products:
     products: Список продуктів
-    buy: купити
-    are_you_sure: ти впевнений
+    show: Показати
+    destroy: Видалити
+    buy: Купити
+    are_you_sure: Ти впевнений?
   carts:
     add: товар було добавлено
+    show:
+     show: Показати
+     destroy: Видалити
+     header:
+      zero: Жодного товару немає у корзині
+      one: Товар в корзині
+      other: Товари в корзині
 
   activerecord:
       attributes:
         product:
+          id: ІД
+          name: Назва
           price: Ціна
+          description: Опис
+
+
+
