@@ -36,7 +36,7 @@ en:
      price: Price
      back: Back
   carts:
-    add: asdaasdadas
+    add: The product has been added to the cart
     show:
      show: Show
      destroy: Remove from cart
