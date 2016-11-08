@@ -30,3 +30,11 @@
         %td= product.description
         %td= link_to t('carts.show.show'), product,  class: "btn btn-info"
         %td= link_to t('carts.show.destroy'), cart_path(id: product.id), method: :delete, class: "btn btn-warning"
+
+-#%h3 Send order on your email
+-#= link_to "Send Order by email", order_send_cart_path(@products), class: "btn btn-default"
+
+= form_tag order_send_cart_path do
+  %label{:for => "email"} Email
+  = text_field_tag :email
+  = submit_tag "Send Order by Email"

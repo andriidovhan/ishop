@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   root :to => redirect('/products')
   resources :products, only: [:index, :new, :create, :show, :destroy]
 
-  resource :cart, only: [:show, :order] do
+  resource :cart, only: [:show] do
     get :add, on: :member
     delete :destroy
-    # , path: 'destroy/:id'
+    # get :order_send, to: 'carts#order_send', as: :order_send
+    post :order_send, to: 'carts#order_send', as: :order_send
   end
   # only=>index
   # {only: :index}

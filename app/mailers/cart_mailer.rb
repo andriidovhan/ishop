@@ -4,4 +4,11 @@ class CartMailer < ApplicationMailer
     mail(to: 'veseluj_@ukr.net',
          subject: 'Product has just been added')
   end
+
+  def order_send(products, email)
+    @products = products
+    @email = email
+    mail(to: "#{@email}",
+         subject: "Your order:")
+  end
 end

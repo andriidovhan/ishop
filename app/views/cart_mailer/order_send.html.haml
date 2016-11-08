@@ -1,0 +1,27 @@
+%h1
+  = "Your cart: "
+  %h3
+    = "Products in your cart: #{@products.inspect}"
+
+-#%body
+-#  .blue
+-#    %h3
+-#      Your Order:
+-#  .notice
+-#    %table.table
+-#      %tbody
+-#      %tr
+-#        %td
+-#          = Product.human_attribute_name('id')
+-#        %td
+-#          = Product.human_attribute_name('name')
+-#        %td
+-#          = Product.human_attribute_name('price')
+-#        %td
+-#          = Product.human_attribute_name('description')
+-#      - @products.each do |product|
+-#        %tr
+-#          %td= product.id
+-#          %td= product.name
+-#          %td= product.price
+-#          %td= product.description
