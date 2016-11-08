@@ -24,7 +24,7 @@ class CartsController < ApplicationController
     @email = params[:email]
     CartMailer.order_send(@products, @email).deliver_now
     redirect_to products_path, alert: 'Order has been sent to your Email and your cart has been cleaned'
-    # @cart.products.delete_all
+    @cart.products.delete_all
   end
 
 end
