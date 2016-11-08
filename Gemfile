@@ -51,3 +51,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml'
 
 gem 'awesome_print'
+gem 'rspec-rails', '~> 3.5'
