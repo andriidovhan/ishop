@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  get 'carts/show'
 
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+
+  get 'carts/show'
   # get 'products/index'
 
   root :to => redirect('/products')

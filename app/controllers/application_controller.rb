@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
 
   before_action :set_current_cart
   before_action :set_locale
+  before_filter :authenticate_user!
+
+  # , except => [:add_to_cart]
+  # def add_to_cart
+  #   # do something
+  # end
 
   private
 

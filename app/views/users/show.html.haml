@@ -16,6 +16,11 @@
 = flash[:notice]
 
 %p
+  -#= image_tag @user.avatar.url
+  -#= image_tag @user.avatar.url(:medium)
+  = image_tag @user.avatar.url(:thumb)
+
+%p
   %strong
     = t('users.show.name')
   = @user.name

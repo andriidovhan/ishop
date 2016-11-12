@@ -52,3 +52,9 @@ gem 'haml'
 
 gem 'awesome_print'
 gem 'rspec-rails', '~> 3.5'
+gem 'devise'
+gem 'devise-bootstrap-views'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem "paperclip", "~> 5.0.0"
+

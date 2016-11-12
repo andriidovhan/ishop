@@ -51,10 +51,12 @@
     %tbody
       - @users.each do |user|
         %tr
+          %td= image_tag user.avatar.url(:thumb)
           %td= user.name
           %td= user.age
           %td= link_to t('users.overview'), user
           %td= link_to t('users.edit'), edit_user_path(user)
           %td= link_to t('users.destroy'), user, method: :delete, data: { confirm: 'Are you sure?' }
+
 %br/
 = link_to t('users.new'), new_user_path, class: "btn btn-default"
