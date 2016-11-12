@@ -31,30 +31,46 @@
 -#  </div>
 -#<% end %>
 
--# the below form works
-%h1 New Product
-= form_tag @product  do
-  = label_tag :Name
-  = text_field_tag :name
-  %br/
-  = label_tag :Price
-  = number_field_tag :price
-  %br/
-  = label_tag :Description
-  = text_area_tag :description
-  %br/
-  = submit_tag 'Save!', class: 'btn btn-success'
+-#-# the below form works
+-#%h1 New Product
+-#= form_tag @product  do
+-#  = label_tag :Name
+-#  = text_field_tag :name
+-#  %br/
+-#  = label_tag :Price
+-#  = number_field_tag :price
+-#  %br/
+-#  = label_tag :Description
+-#  = text_area_tag :description
+-#  %br/
+-#  = submit_tag 'Save!', class: 'btn btn-success'
+-#
+-#
+-#-# the below form is not working
+-#%form.form-inline
+-#  .form-group
+-#    %label.sr-only Name
+-#    %input.form-control{:placeholder => "Name of product", :type => :name}/
+-#  .form-group
+-#    %label.sr-only Password
+-#    %input.form-control{:placeholder => "Price", :type => :price}
+-#  .form-group
+-#    %label.sr-only Description
+-#    %input.form-control{:placeholder => "Description", :type => :descripton}/
+-#  %button.btn.btn-primary{:submit_tag => 'Save!' } Save
 
+= form_tag '/products' do
+  .form-group.row
+    -#%label.col-xs-1.col-form-label Name
+    .col-xs-11
+      %input.form-control{type: 'text',  name: 'name', placeholder: 'Name'}
+  .form-group.row
+    -#%label.col-xs-1.col-form-label Description
+    .col-xs-11
+      %textarea.form-control{ name: 'description', rows: 4, placeholder: 'Description'}
+  .form-group.row
+    -#%label.col-xs-1.col-form-label Price
+    .col-xs-11
+      %input.form-control{type: 'number', name: 'price', placeholder: 'Price'}
 
--# the below form is not working
-%form.form-inline
-  .form-group
-    %label.sr-only Name
-    %input.form-control{:placeholder => "Name of product", :type => :name}/
-  .form-group
-    %label.sr-only Password
-    %input.form-control{:placeholder => "Price", :type => :price}
-  .form-group
-    %label.sr-only Description
-    %input.form-control{:placeholder => "Description", :type => :descripton}/
-  %button.btn.btn-primary{:submit_tag => 'Save!' } Save
+  = submit_tag 'Save', class:'btn btn-success'
