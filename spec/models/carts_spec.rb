@@ -11,7 +11,7 @@ describe Product do
 
   let(:add_products_to_cart) {@c1.products << Product.find(@p1.id) << Product.find(@p2.id) && @c1.save}
 
-  describe 'adding' do
+  describe '.adding' do
     it 'add products to cart' do
       expect{add_products_to_cart}.to change{@c1.products.count}.by(2)
       # @c1.products.find(@p1.id).destroy
@@ -22,7 +22,7 @@ describe Product do
       expect(@c1.products.sum("price")).to eql 6.0
     end
 
-    it 'delete proodut' do
+    it '.delete proodut' do
       add_products_to_cart
       @c1.products.find(@p1.id).delete
       expect(@c1.products.include? @p1.id).to eql false
