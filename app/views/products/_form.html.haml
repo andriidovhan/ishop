@@ -62,15 +62,15 @@
 = form_tag '/products' do
   .form-group.row
     -#%label.col-xs-1.col-form-label Name
-    .col-xs-11
-      %input.form-control{type: 'text',  name: 'name', placeholder: 'Name'}
+    .col-xs-3
+      %input.form-control{type: 'text', name: 'name', placeholder: 'Name'}
   .form-group.row
     -#%label.col-xs-1.col-form-label Description
-    .col-xs-11
+    .col-xs-3
       %textarea.form-control{ name: 'description', rows: 4, placeholder: 'Description'}
   .form-group.row
     -#%label.col-xs-1.col-form-label Price
-    .col-xs-11
+    .col-xs-3
       %input.form-control{type: 'number', name: 'price', placeholder: 'Price'}
 
   = submit_tag 'Save', class:'btn btn-success'
